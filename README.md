@@ -5,7 +5,7 @@
 ![Angular2 Todo MVC](/todo_mvc.png)
 
 # Overview
-This repo is designed to compare the production artifacts built by [`SystemJS`](https://github.com/JayKan/angular2-todo) vs [`Webpack`](https://github.com/JayKan/angular2-todo-webpack). Currently, the [`SystemJS`](https://github.com/JayKan/angular2-todo) repo is using `systemjs-builder` to minify, mangle and rollup to produce the production build, whereas the current repo is using Webpack's `UglifyJsPlugin` optimizer plugin to minimize and compress the final production build.       
+This repo is designed to compare the production artifacts built by [SystemJS](https://github.com/JayKan/angular2-todo) vs. [Webpack](https://github.com/JayKan/angular2-todo-webpack). Currently, the [`SystemJS`](https://github.com/JayKan/angular2-todo) repo is using `systemjs-builder` to minify, mangle and rollup to produce the production build, whereas the current repo is using Webpack's `UglifyJsPlugin` optimizer plugin to minimize and compress the final production build.       
 
 # Dependencies
 * `node >= 5.11`
