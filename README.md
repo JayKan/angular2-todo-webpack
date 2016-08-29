@@ -1,5 +1,4 @@
 # Todo app with Angular2 and Webpack 
-
 > A simple Todo application example built with **Angular2** and **Webpack** with deployment on Firebase. Try the demo at <a href="https://angular-todo-webpack.firebaseapp.com/" target="_blank">angular2-webpack.firebaseapp.com.
 
 ![Angular2 Todo MVC](/todo_mvc.png)
