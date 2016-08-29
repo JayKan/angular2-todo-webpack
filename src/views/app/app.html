@@ -1,0 +1,58 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input type="text"
+           class="new-todo"
+           placeholder="What needs to be done?"
+           [(ngModel)]="newTodoText"
+           (keyup.enter)="addTodo()"
+    >
+  </header>
+
+  <section class="main" *ngIf="_store.todos.length > 0">
+    <input type="checkbox"
+           class="toggle-all"
+           *ngIf="_store.todos.length"
+           #toggleall
+           [checked]="_store.allCompleted()"
+           (click)="_store.setAllTo(toggleall.checked)">
+
+    <ul class="todo-list">
+      <li *ngFor="let todo of _store.todos"
+          [class.completed]="todo.completed"
+          [class.editing]="todo.editing">
+        <div class="view">
+          <input type="checkbox"
+                 class="toggle"
+                 (click)="toggleCompletion(todo)"
+                 [checked]="todo.checked">
+          <label (dblclick)="editTodo(todo)">{{ todo.title }}</label>
+          <button class="destroy" (click)="remove(todo)"></button>
+        </div>
+
+        <input class="edit"
+               *ngIf="todo.editing"
+               [value]="todo.title"
+               #editedTodo
+               (blur)="stopEditing(todo, editedTodo.value)"
+               (keyup.enter)="updateEditingTodo(todo, editedTodo.value)"
+               (keyup.escape)="cancelEditingTodo(todo)"
+        >
+
+      </li>
+    </ul>
+  </section>
+
+  <footer class="footer" *ngIf="_store.todos.length > 0">
+        <span class="todo-count">
+          <strong>{{ _store.getRemaining().length }}</strong>
+          {{ _store.getRemaining().length === 1 ? 'item' : 'items' }} left
+        </span>
+
+    <button class="clear-completed"
+            *ngIf="_store.getCompleted().length > 0"
+            (click)="removeCompleted()"
+    >
+    </button>
+  </footer>
+</section>
