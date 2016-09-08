@@ -1,4 +1,10 @@
 # Todo app with Angular2 and Webpack 
+[![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Dependency Status](https://david-dm.org/JayKan/angular2-todo-webpack/status.svg)](https://david-dm.org/JayKan/angular2-todo-webpack) 
+[![devDependency Status](https://david-dm.org/JayKan/angular2-todo-webpack/dev-status.svg)](https://david-dm.org/JayKan/angular2-todo-webpack?type=dev)
+
+
 > A simple Todo application example built with **Angular2** and **Webpack** with deployment on Firebase. Try the demo at <a href="https://angular-todo-webpack.firebaseapp.com/" target="_blank">angular2-webpack.firebaseapp.com.
 
 ![Angular2 Todo MVC](/todo_mvc.png)
@@ -35,4 +41,4 @@ This repo is designed to compare the production artifacts built by **SystemJS** 
 |`npm run production`|Remove `./target` directory, build application to `./target` and start express server @ `localhost:3000` to serve built/production artifacts|
 
 # License
-[MIT](LICENSE)
+MIT © [Jay Kan](https://github.com/JayKan)

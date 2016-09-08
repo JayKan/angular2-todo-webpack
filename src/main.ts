@@ -1,21 +1,23 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { bootstrap } from '@angular/platform-browser-dynamic';
-
-// core
-import { TODO_STORE_PROVIDER } from './core/store';
-
-// root component
-import { App } from './views/app';
-
-// common styles
-import './views/common/styles.scss';
 
 // enable prod for faster renders
-enableProdMode();
+if (process.env.NODE_ENV === 'production') {
+  enableProdMode();
+}
 
-bootstrap(App, [
-  disableDeprecatedForms(),
-  provideForms(),
-  TODO_STORE_PROVIDER
-]).catch(error => console.error(error));
+// import common styles
+import './views/common/styles.scss';
+
+// import app module
+import { AppModule } from './views/app';
+
+export function main() {
+  return platformBrowserDynamic().bootstrapModule(AppModule);
+}
+
+if (document.readyState === 'complete') {
+  main();
+} else {
+  document.addEventListener('DOMContentLoaded', main);
+}
