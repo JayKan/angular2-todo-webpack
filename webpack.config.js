@@ -166,18 +166,8 @@ if (ENV_PRODUCTION) {
 
   config.plugins.push(
     new WebpackMd5Hash(),
-
-    new DedupePlugin(),
-
     new ExtractTextPlugin('styles.[contenthash].css'),
-
-    /**
-     * Plugin: UglifyJsPlugin
-     * Description: Minimize all JavaScript output of chunks.
-     * Loaders are switched into minimizing mode.
-     *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
-     */
+    new DedupePlugin(),
     new UglifyJsPlugin({
       beautify: false,
       mangle: true,
